@@ -9,11 +9,14 @@
         "spotify_integration": [
             "Administrator"
         ],
-        "local_library": [
-            "All login"
-        ],
         "debug_logs": [
             "Administrator"
+        ],        
+        "local_library": [
+            "All login"
+        ],        
+        "lyrics": [
+            "All login"
         ],
         "manage_stations": [
             "All"
