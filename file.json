@@ -1,0 +1,9 @@
+{
+  "features": {
+    "download_songs": ["All login"],
+    "song_recognition": ["orazio.fazio@gmail.com", "beta_testers"]
+  },
+  "groups": {
+    "beta_testers": ["orazio.fazio@gmail.com", "orazio.fazio@gmail.com"]
+  }
+}
