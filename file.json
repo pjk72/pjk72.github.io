@@ -1,9 +1,26 @@
 {
-  "features": {
-    "download_songs": ["All login"],
-    "song_recognition": ["none.cognome@gmail.com", "beta_testers"]
-  },
-  "groups": {
-    "beta_testers": ["none.cognome@gmail.com", "none.cognome@gmail.com"]
-  }
+    "features": {
+        "download_songs": [
+            "All login"
+        ],
+        "song_recognition": [
+            "orazio.fazio@gmail.com",
+            "beta_testers"
+        ],
+        "spotify_integration": [
+            "All login"
+        ],
+        "local_library": [
+            "All login"
+        ],
+        "debug_logs": [
+            "orazio.fazio@gmail.com"
+        ]
+    },
+    "groups": {
+        "beta_testers": [
+            "orazio.fazio@gmail.com",
+            "orazio.fazio@gmail.com"
+        ]
+    }
 }
