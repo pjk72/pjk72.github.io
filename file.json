@@ -1,23 +1,31 @@
 {
     "features": {
         "download_songs": [
-            "All login"
+            "Administrator"
         ],
         "song_recognition": [
-            "orazio.fazio@gmail.com",
-            "beta_testers"
+            "Administrator"
         ],
         "spotify_integration": [
-            "All login"
+            "Administrator"
         ],
         "local_library": [
             "All login"
         ],
         "debug_logs": [
-            "orazio.fazio@gmail.com"
+            "Administrator"
+        ],
+        "manage_stations": [
+            "All"
+        ],
+        "appearance": [
+            "All"
         ]
     },
     "groups": {
+        "Administrator": [
+            "orazio.fazio@gmail.com"
+        ],
         "beta_testers": [
             "orazio.fazio@gmail.com",
             "orazio.fazio@gmail.com"
