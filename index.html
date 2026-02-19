@@ -21,20 +21,9 @@
 
     <!-- Font elegante -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3351319116434923"
-     crossorigin="anonymous"></script>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGPD32M5C2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-BGPD32M5C2');
-    </script>
 
-    
+    <!-- QUI: NIENTE script Analytics/Adsense diretti: li carichiamo solo dopo il consenso -->
+
     <style>
         * {
             margin: 0;
@@ -195,6 +184,73 @@
             text-decoration: underline;
         }
 
+        /* Banner cookie */
+        .cookie-banner {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            background: #0f172a;
+            color: #e5e7eb;
+            padding: 16px;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.25);
+        }
+
+        .cookie-inner {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .cookie-text {
+            flex: 1 1 260px;
+        }
+
+        .cookie-text a {
+            color: #a5b4fc;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            border-radius: 999px;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cookie-btn-accept {
+            background-color: #22c55e;
+            color: #ffffff;
+        }
+
+        .cookie-btn-reject {
+            background-color: transparent;
+            color: #e5e7eb;
+            border: 1px solid #6b7280;
+        }
+
+        .cookie-btn-accept:hover {
+            background-color: #16a34a;
+        }
+
+        .cookie-btn-reject:hover {
+            background-color: #111827;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-grid {
@@ -217,6 +273,11 @@
             .footer-content {
                 justify-content: center;
                 text-align: center;
+            }
+
+            .cookie-inner {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -277,16 +338,23 @@
         </div>
     </div>
 </section>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3351319116434923"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-3351319116434923"
-     data-ad-slot="7254436651"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
+<!-- BLOCCO ANNUNCI: verrà attivato solo dopo il consenso -->
+<div id="ads-container" style="display:none;">
+    <script async
+            data-cookie-consent="ads"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3351319116434923"
+            crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-3351319116434923"
+         data-ad-slot="7254436651"></ins>
+    <script data-cookie-consent="ads">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
 <footer class="footer">
     <div class="container footer-content">
         <p>© 2026 PJK Developer</p>
@@ -298,6 +366,106 @@
         </div>
     </div>
 </footer>
+
+<!-- BANNER COOKIE -->
+<div class="cookie-banner" id="cookie-banner" style="display:none;">
+    <div class="cookie-inner">
+        <div class="cookie-text">
+            Utilizziamo cookie tecnici e, previo tuo consenso, cookie per statistiche e annunci
+            personalizzati (Google Analytics e Google AdSense) per migliorare l’esperienza
+            e mostrare pubblicità pertinente. Per maggiori informazioni consulta la nostra
+            <a href="https://pjk72.github.io/Radio_Streaming/Policy.html" target="_blank" rel="noopener noreferrer">
+                Privacy Policy
+            </a>.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-btn-reject" id="cookie-reject">
+                Rifiuta
+            </button>
+            <button class="cookie-btn cookie-btn-accept" id="cookie-accept">
+                Accetta tutti
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- LOGICA CONSENSO COOKIE -->
+<script>
+    (function () {
+        const CONSENT_KEY = 'cookie_consent';
+
+        function getConsent() {
+            try {
+                return localStorage.getItem(CONSENT_KEY);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function setConsent(value) {
+            try {
+                localStorage.setItem(CONSENT_KEY, value);
+            } catch (e) {
+                // se localStorage non è disponibile, ignora
+            }
+        }
+
+        function loadAnalyticsAndAds() {
+            // Google Analytics
+            const gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BGPD32M5C2';
+            document.head.appendChild(gaScript);
+
+            gaScript.onload = function () {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', 'G-BGPD32M5C2');
+            };
+
+            // AdSense (mostra il container e lascia che gli script dentro vengano eseguiti)
+            var adsContainer = document.getElementById('ads-container');
+            if (adsContainer) {
+                adsContainer.style.display = 'block';
+            }
+        }
+
+        function initCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            const btnAccept = document.getElementById('cookie-accept');
+            const btnReject = document.getElementById('cookie-reject');
+
+            if (!banner || !btnAccept || !btnReject) return;
+
+            const existingConsent = getConsent();
+
+            if (existingConsent === 'accepted') {
+                // Carica subito gli script
+                loadAnalyticsAndAds();
+                return; // banner non mostrato
+            }
+
+            // Se non c'è consenso o è "rejected", mostra il banner
+            banner.style.display = 'block';
+
+            btnAccept.addEventListener('click', function () {
+                setConsent('accepted');
+                banner.style.display = 'none';
+                loadAnalyticsAndAds();
+            });
+
+            btnReject.addEventListener('click', function () {
+                setConsent('rejected');
+                banner.style.display = 'none';
+                // Non carichiamo Analytics/Ads
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initCookieBanner);
+    })();
+</script>
 
 </body>
 </html>
