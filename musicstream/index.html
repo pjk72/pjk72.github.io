@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MusicStream</title>
+
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="jztC_YOr0Bv9p2F5x157ZYVnYUZnN41X9Nx-rxd6dbE" />
+
+    <meta name="google-adsense-account" content="ca-pub-3351319116434923">
+
+    <!-- SEO -->
+    <meta name="description"
+        content="MusicStreaming App è l'app per ascoltare musica in streaming, radio online e playlist sempre aggiornate.">
+    <meta name="author" content="PJK Developer">
+
+    <!-- FAVICON (usa l’icona Play Store dell’app) -->
+    <link rel="icon" type="image/png"
+        href="https://play-lh.googleusercontent.com/1xrvupxj_jVvqZF_me2PD4L930wyj9QHiQzpqKyHkb-8-Lv6_x834VwsUgeVEodx6nHatRgDWPoXb75FkCgL=s48">
+
+    <!-- Font elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- QUI: NIENTE script Analytics/Adsense diretti: li carichiamo solo dopo il consenso -->
+
+    <!-- Foglio di stile principale -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS spostato in style.css -->
+</head>
+
+<body>
+
+    <header class="top-bar">
+        <div class="container top-bar-content">
+            <span>PJK Developer</span>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <button id="dark-mode-toggle"
+                    style="background: transparent; border: none; cursor: pointer; font-size: 1.2rem; transition: transform 0.3s;"
+                    title="Cambia Tema">🌙</button>
+                <a href="https://play.google.com/store/apps/dev?id=6305350565263081254" target="_blank">
+                    Profilo sviluppatore
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+
+            <div>
+                <h1>MusicStream</h1>
+                <p class="subtitle">
+                    Ascolta musica in streaming, radio online e playlist sempre aggiornate
+                    con un’esperienza moderna e fluida.
+                </p>
+
+                <div class="cta">
+                    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.fazio.musicstream"
+                        target="_blank">
+                        Scarica su Google Play
+                    </a>
+
+                    <a class="btn-secondary" href="https://pjk72.github.io/Radio_Streaming/Policy.html">
+                        Privacy Policy
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://play-lh.googleusercontent.com/1xrvupxj_jVvqZF_me2PD4L930wyj9QHiQzpqKyHkb-8-Lv6_x834VwsUgeVEodx6nHatRgDWPoXb75FkCgL=w480-h960-rw"
+                    alt="MusicStreaming App screenshot">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Funzionalità principali</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">🎧 Streaming continuo</div>
+                <div class="feature-card">📻 Radio online</div>
+                <div class="feature-card">🔥 Playlist aggiornate</div>
+                <div class="feature-card">📱 Design moderno</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE PREFERITI DEDICATA -->
+    <section class="dynamic-section" id="favorites-section" style="padding-bottom:0; display:none;">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">⭐ I Tuoi Preferiti</h2>
+            <div class="dynamic-grid" style="grid-template-columns: 1fr;">
+                <div class="content-card" id="favorites-songs-card" style="display:none; margin-bottom: 25px;">
+                    <h3>🎵 Brani Singoli Salvati</h3>
+                    <ul class="content-list" id="favorites-songs-container"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    </ul>
+                </div>
+                <div class="content-card" id="favorites-albums-card" style="display:none;">
+                    <h3>💿 Album e Collezioni</h3>
+                    <ul class="content-list" id="favorites-albums-container"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE CONTENUTI DINAMICI -->
+    <section class="dynamic-section" id="news-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="music-search-input" class="search-input"
+                    placeholder="🔍 Trova brani o artisti nel mondo...">
+            </div>
+
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 50px; gap: 20px;">
+                <h2 style="margin-bottom: 0;">Classifiche Internazionali</h2>
+
+                <div class="country-selector" style="display: flex; align-items: center; z-index: 20;">
+                    <label style="font-weight: 500; margin-right: 10px; color: #475569;">Nazione:</label>
+                    <div class="custom-dropdown" id="custom-dropdown">
+                        <div class="custom-dropdown-selected" id="custom-dropdown-selected">
+                            <img src="https://flagcdn.com/w40/it.png" alt="flag" class="selected-flag">
+                            <span class="selected-text">Italia</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </div>
+                        <ul class="custom-dropdown-options" id="custom-dropdown-options">
+                            <li data-value="ar"><img src="https://flagcdn.com/w40/ar.png" alt="AR"> Argentina</li>
+                            <li data-value="au"><img src="https://flagcdn.com/w40/au.png" alt="AU"> Australia</li>
+                            <li data-value="at"><img src="https://flagcdn.com/w40/at.png" alt="AT"> Austria</li>
+                            <li data-value="be"><img src="https://flagcdn.com/w40/be.png" alt="BE"> Belgio</li>
+                            <li data-value="br"><img src="https://flagcdn.com/w40/br.png" alt="BR"> Brasile</li>
+                            <li data-value="ca"><img src="https://flagcdn.com/w40/ca.png" alt="CA"> Canada</li>
+                            <li data-value="dk"><img src="https://flagcdn.com/w40/dk.png" alt="DK"> Danimarca</li>
+                            <li data-value="fr"><img src="https://flagcdn.com/w40/fr.png" alt="FR"> Francia</li>
+                            <li data-value="de"><img src="https://flagcdn.com/w40/de.png" alt="DE"> Germania</li>
+                            <li data-value="jp"><img src="https://flagcdn.com/w40/jp.png" alt="JP"> Giappone</li>
+                            <li data-value="in"><img src="https://flagcdn.com/w40/in.png" alt="IN"> India</li>
+                            <li data-value="ie"><img src="https://flagcdn.com/w40/ie.png" alt="IE"> Irlanda</li>
+                            <li data-value="it"><img src="https://flagcdn.com/w40/it.png" alt="IT"> Italia</li>
+                            <li data-value="mx"><img src="https://flagcdn.com/w40/mx.png" alt="MX"> Messico</li>
+                            <li data-value="nl"><img src="https://flagcdn.com/w40/nl.png" alt="NL"> Paesi Bassi</li>
+                            <li data-value="pl"><img src="https://flagcdn.com/w40/pl.png" alt="PL"> Polonia</li>
+                            <li data-value="gb"><img src="https://flagcdn.com/w40/gb.png" alt="GB"> Regno Unito</li>
+                            <li data-value="es"><img src="https://flagcdn.com/w40/es.png" alt="ES"> Spagna</li>
+                            <li data-value="us"><img src="https://flagcdn.com/w40/us.png" alt="US"> Stati Uniti</li>
+                            <li data-value="za"><img src="https://flagcdn.com/w40/za.png" alt="ZA"> Sudafrica</li>
+                            <li data-value="se"><img src="https://flagcdn.com/w40/se.png" alt="SE"> Svezia</li>
+                            <li data-value="ch"><img src="https://flagcdn.com/w40/ch.png" alt="CH"> Svizzera</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dynamic-grid" id="dynamic-grid-container">
+                <!-- Il contenuto verrà caricato dinamicamente tramite JavaScript -->
+                <div style="text-align: center; width: 100%; grid-column: 1 / -1; color: #64748b; font-size: 1.1rem;">
+                    <p>Caricamento contenuti in corso...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCCO ANNUNCI: verrà attivato solo dopo il consenso -->
+    <div id="ads-container" style="display:none;">
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3351319116434923"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-3351319116434923" data-ad-slot="7254436651"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-content"
+            style="flex-direction: column; align-items: center; text-align: center; gap: 8px;">
+            <p style="font-size: 0.85rem; color: #94a3b8; max-width: 600px; margin-bottom: 5px;">
+                I brani musicali presenti su questa piattaforma sono forniti in modalità "Anteprima" (Preview di 30
+                secondi) tramite le API pubbliche di iTunes/Apple Music, a solo scopo dimostrativo e di scoperta
+                musicale. Non è possibile scaricare i file audio.
+            </p>
+            <div
+                style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                <p>© 2026 PJK Developer</p>
+                <div>
+                    <a href="https://pjk72.github.io/Radio_Streaming/Policy.html">Privacy Policy</a>
+                    <a href="https://play.google.com/store/apps/dev?id=6305350565263081254" target="_blank">
+                        Sviluppatore
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BANNER COOKIE -->
+    <div class="cookie-banner" id="cookie-banner" style="display:none;">
+        <div class="cookie-inner">
+            <div class="cookie-text">
+                Utilizziamo cookie tecnici e, previo tuo consenso, cookie per statistiche e annunci
+                personalizzati (Google Analytics e Google AdSense) per migliorare l’esperienza
+                e mostrare pubblicità pertinente. Per maggiori informazioni consulta la nostra
+                <a href="https://pjk72.github.io/Radio_Streaming/Policy.html" target="_blank" rel="noopener noreferrer">
+                    Privacy Policy
+                </a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookie-reject">
+                    Rifiuta
+                </button>
+                <button class="cookie-btn cookie-btn-accept" id="cookie-accept">
+                    Accetta tutti
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGICA CONSENSO COOKIE -->
+    <script src="scripts/cookies.js"></script>
+
+    <!-- LOGICA CONTENUTI DINAMICI -->
+    <script src="scripts/app.js"></script>
+
+    <!-- Wikipedia Bio Modal -->
+    <div class="modal-overlay" id="wiki-modal">
+        <div class="modal-content">
+            <span class="modal-close" id="wiki-modal-close">&times;</span>
+            <h3 id="wiki-modal-title" style="margin-bottom:15px; color:var(--accent); font-size: 1.5rem;">Titolo</h3>
+            <div id="wiki-modal-body"
+                style="font-size:0.95rem; line-height:1.6; color:var(--text-secondary); max-height: 60vh; overflow-y: auto; padding-right: 10px;">
+                Caricamento biografia...
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
