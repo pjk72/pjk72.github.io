@@ -217,6 +217,15 @@
                         <textarea id="dev-message" rows="5" required class="search-input"
                             style="max-width: 100%; border-radius: 12px; padding: 12px 15px; resize: vertical;"></textarea>
                     </div>
+                    <div>
+                        <label for="dev-captcha"
+                            style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);">
+                            <span data-i18n="contact_captcha">Verifica di sicurezza:</span> <span id="captcha-question"
+                                style="font-weight: bold; color: var(--text-primary);"></span>
+                        </label>
+                        <input type="number" id="dev-captcha" required class="search-input"
+                            style="max-width: 100%; border-radius: 12px; padding: 12px 15px;" placeholder="?">
+                    </div>
                     <button type="submit" class="btn-primary" data-i18n="contact_send"
                         style="margin-top: 10px; border: none; cursor: pointer; width: 100%; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);">Invia
                         Messaggio</button>
@@ -297,8 +306,33 @@
 
     <!-- LOGICA FORM CONTATTI -->
     <script>
+        let captchaExpected = 0;
+
+        function initCaptcha() {
+            const n1 = Math.floor(Math.random() * 10) + 1;
+            const n2 = Math.floor(Math.random() * 10) + 1;
+            captchaExpected = n1 + n2;
+            document.getElementById('captcha-question').innerText = `${n1} + ${n2} =`;
+            document.getElementById('dev-captcha').value = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initCaptcha();
+        });
+
         document.getElementById('developer-contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
+
+            const userCaptcha = parseInt(document.getElementById('dev-captcha').value, 10);
+            if (userCaptcha !== captchaExpected) {
+                const errorMsg = currentLang && translations[currentLang] && translations[currentLang].captcha_error
+                    ? translations[currentLang].captcha_error
+                    : "CAPTCHA errato. Riprova.";
+                alert(errorMsg);
+                initCaptcha();
+                return;
+            }
+
             const form = this;
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerText;
@@ -332,6 +366,7 @@
                         const successMsg = document.getElementById('form-success-message');
                         successMsg.style.display = 'block';
                         form.reset();
+                        initCaptcha();
 
                         // Ripristina pulsante
                         submitBtn.innerText = originalBtnText;
