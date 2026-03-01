@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - MusicStream App</title>
+
+    <meta name="description" content="Privacy policy of the MusicStream application.">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png"
+        href="https://play-lh.googleusercontent.com/1xrvupxj_jVvqZF_me2PD4L930wyj9QHiQzpqKyHkb-8-Lv6_x834VwsUgeVEodx6nHatRgDWPoXb75FkCgL=s48">
+
+    <!-- Font elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Foglio di stile principale -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+
+    <style>
+        .policy-container {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: auto;
+            min-height: 65vh;
+            color: var(--text-primary);
+        }
+
+        .policy-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .policy-container h2 {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .policy-container h3 {
+            font-size: 1.25rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .policy-container p,
+        .policy-container li {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .policy-container ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .policy-container a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        nav.toc {
+            background: var(--card-bg);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        nav.toc h2 {
+            margin-top: 0;
+            border-bottom: none;
+            color: var(--text-primary);
+            font-size: 1.3rem;
+        }
+
+        nav.toc a {
+            display: block;
+            margin: 8px 0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav.toc a:hover {
+            text-decoration: underline;
+        }
+
+        a.pdf-link {
+            display: inline-block;
+            color: #fff !important;
+            background: var(--accent);
+            padding: 6px 14px;
+            text-decoration: none !important;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: 10px;
+            transition: opacity 0.3s;
+        }
+
+        a.pdf-link:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="top-bar">
+        <div class="container top-bar-content">
+            <a href="index.html" style="color: inherit; text-decoration: none; font-weight: 600;">PJK Developer</a>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <button id="dark-mode-toggle"
+                    style="background: transparent; border: none; cursor: pointer; font-size: 1.2rem; transition: transform 0.3s;"
+                    title="Toggle Theme">🌙</button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <div class="lang-dropdown-selected" id="lang-dropdown-selected">
+                        <img src="https://flagcdn.com/w40/it.png" alt="flag" class="lang-flag" id="current-lang-flag">
+                        <span class="lang-text" id="current-lang-text">IT</span>
+                        <span class="lang-arrow">▼</span>
+                    </div>
+                    <ul class="lang-dropdown-options" id="lang-dropdown-options">
+                        <li data-lang="it"><img src="https://flagcdn.com/w40/it.png" alt="IT"> Italiano</li>
+                        <li data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="EN"> English</li>
+                        <li data-lang="fr"><img src="https://flagcdn.com/w40/fr.png" alt="FR"> Français</li>
+                        <li data-lang="es"><img src="https://flagcdn.com/w40/es.png" alt="ES"> Español</li>
+                        <li data-lang="de"><img src="https://flagcdn.com/w40/de.png" alt="DE"> Deutsch</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="policy-container">
+        <a href="index.html" class="btn-secondary" data-i18n="go_back"
+            style="display: inline-block; margin-bottom: 25px; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-weight: 500;">⬅
+            Torna indietro</a>
+        <div class="content-card">
+            <div style="margin-bottom: 25px; border-bottom: 2px solid var(--border-color); padding-bottom: 15px;">
+                <h1 style="margin-bottom: 5px; border: none; padding: 0;" data-i18n="app_policy_title">Privacy Policy
+                </h1>
+                <span style="font-size: 1.25rem; color: var(--text-secondary); font-weight: 500;"
+                    data-i18n="app_policy_subtitle">Google App - MusicStream</span>
+            </div>
+            <p data-i18n="app_policy_welcome">Benvenuto nella privacy policy di MusicStream. Questa policy ti aiuterà a
+                capire quali dati raccogliamo, perché li raccogliamo e quali sono i tuoi diritti.</p>
+            <p><span data-i18n="app_policy_latest_update"><strong>Ultimo aggiornamento:</strong> 17 Gennaio 2026</span>
+                <a href="PrivacyPolicy.pdf" class="pdf-link" target="_blank" data-i18n="app_policy_download_pdf">📄
+                    Scarica PDF</a></p>
+
+            <nav class="toc">
+                <h2 data-i18n="app_policy_toc">Sommario</h2>
+                <a href="#owner" data-i18n="app_policy_toc1">Titolare del Trattamento dei Dati</a>
+                <a href="#types" data-i18n="app_policy_toc2">Tipologie di Dati Raccolti</a>
+                <a href="#processing" data-i18n="app_policy_toc3">Modalità e Luogo del Trattamento</a>
+                <a href="#purposes" data-i18n="app_policy_toc4">Finalità del Trattamento</a>
+                <a href="#cookies" data-i18n="app_policy_toc5">Cookie Policy</a>
+                <a href="#eu" data-i18n="app_policy_toc6">Ulteriori Informazioni per Utenti UE</a>
+                <a href="#additional" data-i18n="app_policy_toc7">Informazioni Aggiuntive</a>
+                <a href="#definitions" data-i18n="app_policy_toc8">Definizioni e Riferimenti Legali</a>
+                <a href="#contact" data-i18n="app_policy_toc9">Contatti</a>
+            </nav>
+
+            <section id="owner">
+                <h2 data-i18n="app_policy_owner_title">Titolare del Trattamento dei Dati</h2>
+                <p data-i18n="app_policy_owner_name">pjkdeveloper</p>
+                <p><span data-i18n="app_policy_owner_email">Email di contatto del Titolare:</span> <a
+                        href="mailto:pjk72.developer@gmail.com">pjk72.developer@gmail.com</a></p>
+            </section>
+
+            <section id="types">
+                <h2 data-i18n="app_policy_types_title">Tipologie di Dati Raccolti</h2>
+                <p data-i18n="app_policy_types_desc">Il Titolare non fornisce una lista di tipologie di Dati Personali
+                    raccolti. Dettagli completi sono forniti nelle sezioni dedicate o tramite testi di spiegazione
+                    specifici. I Dati Personali possono essere forniti liberamente dall'Utente, o raccolti
+                    automaticamente come Dati di Utilizzo.</p>
+            </section>
+
+            <section id="processing">
+                <h2 data-i18n="app_policy_processing_title">Modalità e Luogo del Trattamento</h2>
+                <h3 data-i18n="app_policy_processing_methods">Modalità di Trattamento</h3>
+                <p data-i18n="app_policy_processing_methods_desc">Il Titolare adotta le opportune misure di sicurezza
+                    volte ad impedire l'accesso, la divulgazione, la modifica o la distruzione non autorizzata dei Dati.
+                    L'accesso ai Dati potrebbe essere reso disponibile a personale interno o a responsabili esterni ove
+                    necessario.</p>
+                <h3 data-i18n="app_policy_processing_place">Luogo</h3>
+                <p data-i18n="app_policy_processing_place_desc">I Dati sono trattati presso le sedi operative del
+                    Titolare o in altri luoghi in cui si trovano le parti coinvolte nel trattamento. Trasferimenti di
+                    Dati al di fuori del paese dell'Utente potrebbero avvenire in conformità con le leggi applicabili.
+                </p>
+                <h3 data-i18n="app_policy_processing_retention">Tempo di Conservazione</h3>
+                <p data-i18n="app_policy_processing_retention_desc">I Dati Personali sono conservati per il tempo
+                    necessario a conseguire lo scopo per cui sono stati raccolti e potrebbero essere conservati più a
+                    lungo per obblighi legali o in base al consenso dell'utente.</p>
+            </section>
+
+            <section id="purposes" style="display: none;"></section>
+
+            <section id="cookies">
+                <h2 data-i18n="app_policy_cookies_title">Cookie Policy</h2>
+                <p data-i18n="app_policy_cookies_desc">Questa Applicazione fa utilizzo di Strumenti di Tracciamento. Per
+                    saperne di più, gli Utenti possono consultare la Cookie Policy.</p>
+            </section>
+
+            <section id="eu">
+                <h2 data-i18n="app_policy_eu_title">Ulteriori Informazioni per Utenti UE</h2>
+                <p data-i18n="app_policy_eu_desc">Il Titolare può trattare Dati Personali in base al consenso
+                    dell'utente, a una necessità contrattuale, a un obbligo legale, a un interesse pubblico o a
+                    legittimi interessi. Gli Utenti europei possono esercitare i diritti previsti dal GDPR, quali
+                    l'accesso, la rettifica, la cancellazione, la limitazione e la portabilità dei dati.</p>
+            </section>
+
+            <section id="additional">
+                <h2 data-i18n="app_policy_add_title">Informazioni Aggiuntive sul Trattamento</h2>
+                <p data-i18n="app_policy_add_desc">I Dati potrebbero essere utilizzati per scopi legali, log di sistema,
+                    manutenzione o altre necessità operative. Maggiori dettagli possono essere richiesti al Titolare in
+                    qualsiasi momento.</p>
+            </section>
+
+            <section id="definitions">
+                <h2 data-i18n="app_policy_def_title">Definizioni e Riferimenti Legali</h2>
+                <ul>
+                    <li data-i18n="app_policy_def1"><strong>Dati Personali:</strong> Qualsiasi informazione che permetta
+                        l'identificazione di una persona.</li>
+                    <li data-i18n="app_policy_def2"><strong>Dati di Utilizzo:</strong> Informazioni raccolte
+                        automaticamente dall'Applicazione.</li>
+                    <li data-i18n="app_policy_def3"><strong>Utente / Interessato:</strong> L'individuo che utilizza
+                        l'Applicazione.</li>
+                    <li data-i18n="app_policy_def4"><strong>Responsabile del Trattamento:</strong> Entità che elabora
+                        dati per conto del Titolare.</li>
+                    <li data-i18n="app_policy_def5"><strong>Titolare del Trattamento:</strong> L'entità che determina
+                        gli scopi e i mezzi del trattamento dei dati.</li>
+                    <li data-i18n="app_policy_def6"><strong>Servizio / Applicazione:</strong> Il mezzo attraverso il
+                        quale i Dati Personali vengono raccolti.</li>
+                </ul>
+            </section>
+
+            <section id="contact">
+                <h2 data-i18n="app_policy_contact_title">Contatti</h2>
+                <p data-i18n="app_policy_contact_desc">Per domande o richieste riguardanti i tuoi dati, contatta:</p>
+                <p>MusicStream – pjkdeveloper</p>
+                <p>Email: <a href="mailto:pjk72.developer@gmail.com">pjk72.developer@gmail.com</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content"
+            style="flex-direction: column; align-items: center; text-align: center; gap: 8px;">
+            <p style="font-size: 0.9rem;" data-i18n="app_policy_footer_rights">&copy; 2026 MusicStream. Tutti i diritti
+                riservati.</p>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);" data-i18n="app_policy_footer_update">Ultimo
+                aggiornamento: 17 Gennaio 2026</p>
+        </div>
+    </footer>
+
+    <!-- Translations script -->
+    <script src="scripts/i18n.js"></script>
+
+    <script>
+        // Logica per Tema Scuro
+        const body = document.body;
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        const isDark = localStorage.getItem('musicstream_dark') === 'true';
+
+        if (isDark) {
+            body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            const isDarkMode = body.classList.toggle('dark-mode');
+            toggleBtn.textContent = isDarkMode ? '☀️' : '🌙';
+            localStorage.setItem('musicstream_dark', isDarkMode);
+        });
+    </script>
+</body>
+
+</html>

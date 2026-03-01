@@ -42,7 +42,22 @@
                 <button id="dark-mode-toggle"
                     style="background: transparent; border: none; cursor: pointer; font-size: 1.2rem; transition: transform 0.3s;"
                     title="Cambia Tema">🌙</button>
-                <a href="https://play.google.com/store/apps/dev?id=6305350565263081254" target="_blank">
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <div class="lang-dropdown-selected" id="lang-dropdown-selected">
+                        <img src="https://flagcdn.com/w40/it.png" alt="flag" class="lang-flag" id="current-lang-flag">
+                        <span class="lang-text" id="current-lang-text">IT</span>
+                        <span class="lang-arrow">▼</span>
+                    </div>
+                    <ul class="lang-dropdown-options" id="lang-dropdown-options">
+                        <li data-lang="it"><img src="https://flagcdn.com/w40/it.png" alt="IT"> Italiano</li>
+                        <li data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="EN"> English</li>
+                        <li data-lang="fr"><img src="https://flagcdn.com/w40/fr.png" alt="FR"> Français</li>
+                        <li data-lang="es"><img src="https://flagcdn.com/w40/es.png" alt="ES"> Español</li>
+                        <li data-lang="de"><img src="https://flagcdn.com/w40/de.png" alt="DE"> Deutsch</li>
+                    </ul>
+                </div>
+                <a href="https://play.google.com/store/apps/dev?id=6305350565263081254" target="_blank"
+                    data-i18n="dev_profile">
                     Profilo sviluppatore
                 </a>
             </div>
@@ -54,19 +69,19 @@
 
             <div>
                 <h1>MusicStream</h1>
-                <p class="subtitle">
+                <p class="subtitle" data-i18n="hero_subtitle">
                     Ascolta musica in streaming, radio online e playlist sempre aggiornate
                     con un’esperienza moderna e fluida.
                 </p>
 
                 <div class="cta">
                     <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.fazio.musicstream"
-                        target="_blank">
+                        target="_blank" data-i18n="download_play">
                         Scarica su Google Play
                     </a>
 
-                    <a class="btn-secondary" href="https://pjk72.github.io/Radio_Streaming/Policy.html">
-                        Privacy Policy
+                    <a class="btn-secondary" href="Policy_app.html" data-i18n="privacy_policy_app">
+                        Privacy Policy - App
                     </a>
                 </div>
             </div>
@@ -81,13 +96,13 @@
 
     <section class="features">
         <div class="container">
-            <h2>Funzionalità principali</h2>
+            <h2 data-i18n="features_title">Funzionalità principali</h2>
 
             <div class="features-grid">
-                <div class="feature-card">🎧 Streaming continuo</div>
-                <div class="feature-card">📻 Radio online</div>
-                <div class="feature-card">🔥 Playlist aggiornate</div>
-                <div class="feature-card">📱 Design moderno</div>
+                <div class="feature-card" data-i18n="feat_1">🎧 Streaming continuo</div>
+                <div class="feature-card" data-i18n="feat_2">📻 Radio online</div>
+                <div class="feature-card" data-i18n="feat_3">🔥 Playlist aggiornate</div>
+                <div class="feature-card" data-i18n="feat_4">📱 Design moderno</div>
             </div>
         </div>
     </section>
@@ -95,16 +110,16 @@
     <!-- SEZIONE PREFERITI DEDICATA -->
     <section class="dynamic-section" id="favorites-section" style="padding-bottom:0; display:none;">
         <div class="container">
-            <h2 style="margin-bottom: 30px;">⭐ I Tuoi Preferiti</h2>
+            <h2 style="margin-bottom: 30px;" data-i18n="fav_title">⭐ I Tuoi Preferiti</h2>
             <div class="dynamic-grid" style="grid-template-columns: 1fr;">
                 <div class="content-card" id="favorites-songs-card" style="display:none; margin-bottom: 25px;">
-                    <h3>🎵 Brani Singoli Salvati</h3>
+                    <h3 data-i18n="fav_songs">🎵 Brani Singoli Salvati</h3>
                     <ul class="content-list" id="favorites-songs-container"
                         style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
                     </ul>
                 </div>
                 <div class="content-card" id="favorites-albums-card" style="display:none;">
-                    <h3>💿 Album e Collezioni</h3>
+                    <h3 data-i18n="fav_albums">💿 Album e Collezioni</h3>
                     <ul class="content-list" id="favorites-albums-container"
                         style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
                     </ul>
@@ -118,15 +133,16 @@
         <div class="container">
             <div class="search-container">
                 <input type="text" id="music-search-input" class="search-input"
-                    placeholder="🔍 Trova brani o artisti nel mondo...">
+                    data-i18n-placeholder="search_placeholder" placeholder="🔍 Trova brani o artisti nel mondo...">
             </div>
 
             <div
                 style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 50px; gap: 20px;">
-                <h2 style="margin-bottom: 0;">Classifiche Internazionali</h2>
+                <h2 style="margin-bottom: 0;" data-i18n="charts_title">Classifiche Internazionali</h2>
 
                 <div class="country-selector" style="display: flex; align-items: center; z-index: 20;">
-                    <label style="font-weight: 500; margin-right: 10px; color: #475569;">Nazione:</label>
+                    <label style="font-weight: 500; margin-right: 10px; color: #475569;"
+                        data-i18n="country_label">Nazione:</label>
                     <div class="custom-dropdown" id="custom-dropdown">
                         <div class="custom-dropdown-selected" id="custom-dropdown-selected">
                             <img src="https://flagcdn.com/w40/it.png" alt="flag" class="selected-flag">
@@ -164,14 +180,57 @@
             <div class="dynamic-grid" id="dynamic-grid-container">
                 <!-- Il contenuto verrà caricato dinamicamente tramite JavaScript -->
                 <div style="text-align: center; width: 100%; grid-column: 1 / -1; color: #64748b; font-size: 1.1rem;">
-                    <p>Caricamento contenuti in corso...</p>
+                    <p data-i18n="loading_content">Caricamento contenuti in corso...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE FORM CONTATTI -->
+    <section class="dynamic-section" id="contact-section">
+        <div class="container" style="max-width: 600px;">
+            <div class="content-card" style="text-align: center;">
+                <h2 style="margin-bottom: 20px; font-size: 2rem;" data-i18n="contact_dev">Contatta lo Sviluppatore</h2>
+                <p style="margin-bottom: 30px; color: var(--text-secondary);" data-i18n="contact_desc">Hai suggerimenti,
+                    richieste o hai trovato
+                    un bug? Inviaci un messaggio!</p>
+                <form id="developer-contact-form"
+                    style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+                    <div>
+                        <label for="dev-name"
+                            style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);"
+                            data-i18n="contact_name">Nome</label>
+                        <input type="text" id="dev-name" required class="search-input"
+                            style="max-width: 100%; border-radius: 12px; padding: 12px 15px;">
+                    </div>
+                    <div>
+                        <label for="dev-email"
+                            style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);"
+                            data-i18n="contact_email">La tua Email</label>
+                        <input type="email" id="dev-email" required class="search-input"
+                            style="max-width: 100%; border-radius: 12px; padding: 12px 15px;">
+                    </div>
+                    <div>
+                        <label for="dev-message"
+                            style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);"
+                            data-i18n="contact_msg">Messaggio</label>
+                        <textarea id="dev-message" rows="5" required class="search-input"
+                            style="max-width: 100%; border-radius: 12px; padding: 12px 15px; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" data-i18n="contact_send"
+                        style="margin-top: 10px; border: none; cursor: pointer; width: 100%; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);">Invia
+                        Messaggio</button>
+                </form>
+                <div id="form-success-message" data-i18n="contact_success"
+                    style="display: none; margin-top: 20px; padding: 15px; background-color: rgba(34, 197, 94, 0.1); color: #16a34a; border-radius: 12px; font-weight: 500; border: 1px solid rgba(34, 197, 94, 0.2);">
+                    Grazie! Il tuo messaggio è stato inviato con successo.
                 </div>
             </div>
         </div>
     </section>
 
     <!-- BLOCCO ANNUNCI: verrà attivato solo dopo il consenso -->
-    <div id="ads-container" style="display:none;">
+    <!--     <div id="ads-container" style="display:none;">
         <script async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3351319116434923"
             crossorigin="anonymous"></script>
@@ -180,12 +239,13 @@
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-    </div>
+    </div> -->
 
     <footer class="footer">
         <div class="container footer-content"
             style="flex-direction: column; align-items: center; text-align: center; gap: 8px;">
-            <p style="font-size: 0.85rem; color: #94a3b8; max-width: 600px; margin-bottom: 5px;">
+            <p style="font-size: 0.85rem; color: #94a3b8; max-width: 600px; margin-bottom: 5px;"
+                data-i18n="footer_text">
                 I brani musicali presenti su questa piattaforma sono forniti in modalità "Anteprima" (Preview di 30
                 secondi) tramite le API pubbliche di iTunes/Apple Music, a solo scopo dimostrativo e di scoperta
                 musicale. Non è possibile scaricare i file audio.
@@ -194,8 +254,10 @@
                 style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
                 <p>© 2026 PJK Developer</p>
                 <div>
-                    <a href="https://pjk72.github.io/Radio_Streaming/Policy.html">Privacy Policy</a>
-                    <a href="https://play.google.com/store/apps/dev?id=6305350565263081254" target="_blank">
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="policy.html" data-i18n="privacy_policy_web">Privacy Policy Web</a>
+                    <a href="https://play.google.com/store/apps/dev?id=6305350565263081254" target="_blank"
+                        data-i18n="developer">
                         Sviluppatore
                     </a>
                 </div>
@@ -207,18 +269,19 @@
     <div class="cookie-banner" id="cookie-banner" style="display:none;">
         <div class="cookie-inner">
             <div class="cookie-text">
-                Utilizziamo cookie tecnici e, previo tuo consenso, cookie per statistiche e annunci
-                personalizzati (Google Analytics e Google AdSense) per migliorare l’esperienza
-                e mostrare pubblicità pertinente. Per maggiori informazioni consulta la nostra
-                <a href="https://pjk72.github.io/Radio_Streaming/Policy.html" target="_blank" rel="noopener noreferrer">
-                    Privacy Policy
+                <span data-i18n="cookie_text">Utilizziamo cookie tecnici e, previo tuo consenso, cookie per statistiche
+                    e annunci
+                    personalizzati (Google Analytics e Google AdSense) per migliorare l’esperienza
+                    e mostrare pubblicità pertinente. Per maggiori informazioni consulta la nostra</span>
+                <a href="policy.html" target="_blank" rel="noopener noreferrer" data-i18n="privacy_policy">
+                    Web - Privacy Policy
                 </a>.
             </div>
             <div class="cookie-buttons">
-                <button class="cookie-btn cookie-btn-reject" id="cookie-reject">
+                <button class="cookie-btn cookie-btn-reject" id="cookie-reject" data-i18n="cookie_reject">
                     Rifiuta
                 </button>
-                <button class="cookie-btn cookie-btn-accept" id="cookie-accept">
+                <button class="cookie-btn cookie-btn-accept" id="cookie-accept" data-i18n="cookie_accept">
                     Accetta tutti
                 </button>
             </div>
@@ -228,8 +291,74 @@
     <!-- LOGICA CONSENSO COOKIE -->
     <script src="scripts/cookies.js"></script>
 
-    <!-- LOGICA CONTENUTI DINAMICI -->
+    <!-- LOGICA I18N E CONTENUTI DINAMICI -->
+    <script src="scripts/i18n.js"></script>
     <script src="scripts/app.js"></script>
+
+    <!-- LOGICA FORM CONTATTI -->
+    <script>
+        document.getElementById('developer-contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+
+            // Disabilita bottone al caricamento
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+
+            const name = document.getElementById('dev-name').value;
+            const email = document.getElementById('dev-email').value;
+            const message = document.getElementById('dev-message').value;
+
+            // Utilizzo di Formspree per l'invio dell'email "dietro le quinte" senza client locale
+            const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjgedlgn";
+
+            fetch(FORMSPREE_ENDPOINT, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    Nome: name,
+                    Email: email,
+                    Messaggio: message,
+                    _subject: "Nuovo Feedback da MusicStream Web"
+                })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        const successMsg = document.getElementById('form-success-message');
+                        successMsg.style.display = 'block';
+                        form.reset();
+
+                        // Ripristina pulsante
+                        submitBtn.innerText = originalBtnText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+
+                        // Nasconde il messaggio di successo dopo 5 secondi
+                        setTimeout(() => {
+                            successMsg.style.display = 'none';
+                        }, 5000);
+                    } else {
+                        throw new Error("Errore nell'invio");
+                    }
+                })
+                .catch(error => {
+                    console.error("Errore nell'invio del messaggio:", error);
+
+                    // Mostra un alert all'utente al posto di aprire il client di posta
+                    alert("Si è verificato un errore durante l'invio del messaggio. Riprova più tardi.");
+
+                    // Ripristina pulsante
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                });
+        });
+    </script>
 
     <!-- Wikipedia Bio Modal -->
     <div class="modal-overlay" id="wiki-modal">
@@ -237,7 +366,8 @@
             <span class="modal-close" id="wiki-modal-close">&times;</span>
             <h3 id="wiki-modal-title" style="margin-bottom:15px; color:var(--accent); font-size: 1.5rem;">Titolo</h3>
             <div id="wiki-modal-body"
-                style="font-size:0.95rem; line-height:1.6; color:var(--text-secondary); max-height: 60vh; overflow-y: auto; padding-right: 10px;">
+                style="font-size:0.95rem; line-height:1.6; color:var(--text-secondary); max-height: 60vh; overflow-y: auto; padding-right: 10px;"
+                data-i18n="loading_bio">
                 Caricamento biografia...
             </div>
         </div>
