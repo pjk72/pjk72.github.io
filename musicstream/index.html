@@ -186,6 +186,92 @@
         </div>
     </section>
 
+    <!-- SEZIONE FAQ -->
+    <section class="dynamic-section" id="faq-section"
+        style="background-color: var(--bg-alt, #0f172a); padding: 40px 0;">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 data-i18n="faq_title" style="margin-bottom: 15px; font-size: 2rem;">Domande Frequenti (FAQ) -
+                    MusicStream</h2>
+                <p data-i18n="faq_intro" style="color: var(--text-secondary);">Abbiamo raccolto le domande più comuni
+                    per aiutarti a sfruttare al meglio tutte le funzionalità della nostra app.</p>
+            </div>
+            <div id="faq-content-container" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Generato tramite JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGICA E STRUTTURA FAQ -->
+    <script>
+        (function () {
+            const faqContainer = document.getElementById('faq-content-container');
+            if (faqContainer) {
+                const categories = [
+                    { id: 'faq_cat_radio', questions: [1, 2, 3, 4, 5] },
+                    { id: 'faq_cat_music', questions: [6, 7, 8, 9, 10, 11] },
+                    { id: 'faq_cat_lyrics', questions: [12, 13, 14, 15] },
+                    { id: 'faq_cat_custom', questions: [16, 17, 18] },
+                    { id: 'faq_cat_backup', questions: [19, 20] },
+                    { id: 'faq_cat_support', questions: [21, 22] }
+                ];
+
+                categories.forEach(cat => {
+                    const catDiv = document.createElement('div');
+                    catDiv.className = 'faq-category';
+
+                    const catTitle = document.createElement('h3');
+                    catTitle.setAttribute('data-i18n', cat.id);
+                    catTitle.textContent = cat.id;
+                    catDiv.appendChild(catTitle);
+
+                    cat.questions.forEach(q => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'faq-item';
+
+                        const questionDiv = document.createElement('div');
+                        questionDiv.className = 'faq-question';
+
+                        const spanQ = document.createElement('span');
+                        spanQ.setAttribute('data-i18n', 'faq_q' + q);
+                        spanQ.textContent = 'Q' + q;
+
+                        const icon = document.createElement('span');
+                        icon.className = 'faq-toggle';
+                        icon.textContent = '+';
+
+                        questionDiv.appendChild(spanQ);
+                        questionDiv.appendChild(icon);
+
+                        const ansDiv = document.createElement('div');
+                        ansDiv.className = 'faq-answer';
+
+                        const innerAnsDiv = document.createElement('div');
+                        innerAnsDiv.className = 'faq-answer-inner';
+                        innerAnsDiv.setAttribute('data-i18n', 'faq_a' + q);
+                        innerAnsDiv.textContent = 'A' + q;
+
+                        ansDiv.appendChild(innerAnsDiv);
+                        itemDiv.appendChild(questionDiv);
+                        itemDiv.appendChild(ansDiv);
+                        catDiv.appendChild(itemDiv);
+
+                        questionDiv.addEventListener('click', () => {
+                            // Opzionale: chiudi le altre FAQ aperte
+                            const currentlyActive = document.querySelector('.faq-item.active');
+                            if (currentlyActive && currentlyActive !== itemDiv) {
+                                currentlyActive.classList.remove('active');
+                            }
+                            itemDiv.classList.toggle('active');
+                        });
+                    });
+
+                    faqContainer.appendChild(catDiv);
+                });
+            }
+        })();
+    </script>
+
     <!-- SEZIONE FORM CONTATTI -->
     <section class="dynamic-section" id="contact-section">
         <div class="container" style="max-width: 600px;">
