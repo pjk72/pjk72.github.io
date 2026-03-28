@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicStream - Changelog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .changelog-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .changelog-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .changelog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .version-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 100px;
+        }
+
+        .version-tag {
+            background: var(--accent);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .version-date {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .description-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .changelog-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .changelog-list li {
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.5;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .changelog-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #cbd5f5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="top-bar">
+        <div class="container top-bar-content">
+            <a href="index.html" class="back-link">
+                <span>←</span> <span data-i18n="go_back">Torna indietro</span>
+            </a>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <div class="lang-dropdown-selected" id="lang-dropdown-selected">
+                        <img src="https://flagcdn.com/w40/it.png" alt="flag" class="lang-flag" id="current-lang-flag">
+                        <span class="lang-text" id="current-lang-text">IT</span>
+                        <span class="lang-arrow">▼</span>
+                    </div>
+                    <ul class="lang-dropdown-options" id="lang-dropdown-options">
+                        <li data-lang="it"><img src="https://flagcdn.com/w40/it.png" alt="IT"> Italiano</li>
+                        <li data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="EN"> English</li>
+                        <li data-lang="fr"><img src="https://flagcdn.com/w40/fr.png" alt="FR"> Français</li>
+                        <li data-lang="es"><img src="https://flagcdn.com/w40/es.png" alt="ES"> Español</li>
+                        <li data-lang="de"><img src="https://flagcdn.com/w40/de.png" alt="DE"> Deutsch</li>
+                    </ul>
+                </div>
+                <button id="dark-mode-toggle"
+                    style="background: transparent; border: none; cursor: pointer; font-size: 1.2rem; transition: transform 0.3s;"
+                    title="Cambia Tema">🌙</button>
+                <span style="font-weight: 600; letter-spacing: 0.5px;">MusicStream</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="dynamic-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 15px;" data-i18n="changelog_title">Registro delle Modifiche</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;" data-i18n="changelog_subtitle">Resta aggiornato sulle ultime novità e miglioramenti di MusicStream.</p>
+            </div>
+
+            <div class="changelog-container">
+                <!-- Versione 1.1.1+10 -->
+                <div class="changelog-card">
+                    <div class="version-info">
+                        <div class="info-row">
+                            <span class="info-label" data-i18n="changelog_version">Versione</span>
+                            <span class="version-tag">1.1.1+10</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label" data-i18n="changelog_date">Data</span>
+                            <span class="version-date">27/03/2026</span>
+                        </div>
+                    </div>
+                    <div class="description-section">
+                        <span class="info-label" data-i18n="changelog_desc">Descrizione</span>
+                        <ul class="changelog-list">
+                            <li data-i18n="changelog_entry_v10_1">Implementata localizzazione dinamica per Android Auto (testi navigazione).</li>
+                            <li data-i18n="changelog_entry_v10_2">Risolto bug del ripristino backup (gestione timeout, spinner e permessi).</li>
+                            <li data-i18n="changelog_entry_v10_3">Ottimizzata visibilità playlist 'Per Te' caricate da backup durante il caricamento AI.</li>
+                            <li data-i18n="changelog_entry_v10_4">Automatizzato passaggio frequenza backup da 'Manuale' a 'Giornaliero' dopo il primo ripristino.</li>
+                            <li data-i18n="changelog_entry_v10_5">Localizzati suggerimenti di ricerca (hintText) in PlaylistScreen e correzioni minori UI.</li>
+                            <li data-i18n="changelog_entry_v10_6">Aggiunto supporto completo e sincronizzazione per la lingua Araba (RTL ready).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Versione 1.1.0 -->
+                <div class="changelog-card">
+                    <div class="version-info">
+                        <div class="info-row">
+                            <span class="info-label" data-i18n="changelog_version">Versione</span>
+                            <span class="version-tag">1.1.0</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label" data-i18n="changelog_date">Data</span>
+                            <span class="version-date">26/03/2026</span>
+                        </div>
+                    </div>
+                    <div class="description-section">
+                        <span class="info-label" data-i18n="changelog_desc">Descrizione</span>
+                        <ul class="changelog-list">
+                            <li data-i18n="changelog_entry_v110">Migliorata stabilità avvio app e gestione caricamento splash screen.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Versione 1.0.9 -->
+                <div class="changelog-card">
+                    <div class="version-info">
+                        <div class="info-row">
+                            <span class="info-label" data-i18n="changelog_version">Versione</span>
+                            <span class="version-tag">1.0.9</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label" data-i18n="changelog_date">Data</span>
+                            <span class="version-date">25/03/2026</span>
+                        </div>
+                    </div>
+                    <div class="description-section">
+                        <span class="info-label" data-i18n="changelog_desc">Descrizione</span>
+                        <ul class="changelog-list">
+                            <li data-i18n="changelog_entry_v109">Ottimizzata logica dei diritti (Entitlements) per il riconoscimento brani su Android Auto.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Versione 1.0.8 -->
+                <div class="changelog-card">
+                    <div class="version-info">
+                        <div class="info-row">
+                            <span class="info-label" data-i18n="changelog_version">Versione</span>
+                            <span class="version-tag">1.0.8</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label" data-i18n="changelog_date">Data</span>
+                            <span class="version-date">24/03/2026</span>
+                        </div>
+                    </div>
+                    <div class="description-section">
+                        <span class="info-label" data-i18n="changelog_desc">Descrizione</span>
+                        <ul class="changelog-list">
+                            <li data-i18n="changelog_entry_v108">Implementato riconoscimento brani in background per radio streaming.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  </section>
+
+    <footer class="footer">
+        <div class="container footer-content" style="flex-direction: column; align-items: center; text-align: center;">
+            <p>© 2026 PJK Developer</p>
+        </div>
+    </footer>
+
+    <!-- LOGICA I18N E TEMA -->
+    <script src="scripts/cookies.js"></script>
+    <script src="scripts/i18n.js"></script>
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+        // Applica il tema salvato o quello di sistema
+        if (localStorage.getItem('dark_mode') === 'true') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerText = '☀️';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('dark_mode', isDark);
+            darkModeToggle.innerText = isDark ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+
+</html>

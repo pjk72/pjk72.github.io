@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pjk72.github.io/musicstream/sitemap.xml

@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://pjk72.github.io/MusicStream/index.html</loc>
-      <lastmod>2026-03-01</lastmod>
+      <loc>https://pjk72.github.io/musicstream/index.html</loc>
+      <lastmod>2026-03-27</lastmod>
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://pjk72.github.io/MusicStream/sitemap.html</loc>
-      <lastmod>2026-03-01</lastmod>
+      <loc>https://pjk72.github.io/musicstream/changelog.html</loc>
+      <lastmod>2026-03-27</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://pjk72.github.io/musicstream/policy.html</loc>
+      <lastmod>2026-03-27</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://pjk72.github.io/musicstream/Policy_app.html</loc>
+      <lastmod>2026-03-27</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://pjk72.github.io/musicstream/sitemap.html</loc>
+      <lastmod>2026-03-27</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
