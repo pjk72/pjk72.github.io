@@ -4,6 +4,7 @@
 <head>
     <title>MusicStream - Reindirizzamento...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/i18n.js"></script>
     <script>
         window.onload = function () {
             // Estrae i parametri dal link (es. ?id=xyz&title=abc)
@@ -19,14 +20,14 @@
             // Se l'app non è installata, dopo 2,5 secondi li manda al PlayStore
             setTimeout(function () {
                 window.location.href = "https://play.google.com/store/apps/details?id=com.fazio.musicstream";
-            }, 2500);
+            }, 5000);
         };
     </script>
 </head>
 
 <body style="background: black; color: white; text-align: center; margin-top: 50px; font-family: sans-serif;">
-    <h2>Apertura Brano in corso...</h2>
-    <p>Se non hai l'App installata, verrai reindirizzato al Play Store.</p>
+    <h2 data-i18n="share_opening">Apertura Brano in corso...</h2>
+    <p data-i18n="share_redirect">Se non hai l'App installata, verrai reindirizzato al Play Store.</p>
 </body>
 
 </html>

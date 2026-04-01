@@ -185,7 +185,9 @@ const translations = {
         sitemap_policy_app_title: "Privacy Policy App",
         sitemap_policy_app_desc: "Informativa specifica per l'applicazione mobile MusicStream.",
         sitemap_xml_title: "Sitemap XML",
-        sitemap_xml_desc: "Mappa tecnica del sito dedicata ai motori di ricerca (Seo)."
+        sitemap_xml_desc: "Mappa tecnica del sito dedicata ai motori di ricerca (Seo).",
+        share_opening: "Apertura Brano in corso...",
+        share_redirect: "Se non hai l'App installata, verrai reindirizzato al Play Store."
     },
     en: {
         dev_profile: "Developer Profile",
@@ -373,7 +375,9 @@ const translations = {
         sitemap_policy_app_title: "Privacy Policy App",
         sitemap_policy_app_desc: "Informativa specifica per l'applicazione mobile MusicStream.",
         sitemap_xml_title: "Sitemap XML",
-        sitemap_xml_desc: "Mappa tecnica del sito dedicata ai motori di ricerca (Seo)."
+        sitemap_xml_desc: "Mappa tecnica del sito dedicata ai motori di ricerca (Seo).",
+        share_opening: "Opening Song...",
+        share_redirect: "If you don't have the App installed, you will be redirected to the Play Store."
     },
     fr: {
         dev_profile: "Profil du développeur",
@@ -561,7 +565,9 @@ const translations = {
         sitemap_policy_app_title: "Politique de confidentialité de l'application",
         sitemap_policy_app_desc: "Informations spécifiques à l'application mobile MusicStream.",
         sitemap_xml_title: "Sitemap XML",
-        sitemap_xml_desc: "Plan technique du site dédié aux moteurs de recherche (SEO)."
+        sitemap_xml_desc: "Plan technique du site dédié aux moteurs de recherche (SEO).",
+        share_opening: "Ouverture de la piste en cours...",
+        share_redirect: "Si vous n'avez pas l'application installée, vous serez redirigé vers le Play Store."
     },
     es: {
         dev_profile: "Perfil del desarrollador",
@@ -749,7 +755,9 @@ const translations = {
         sitemap_policy_app_title: "Política de privacidad de la aplicación",
         sitemap_policy_app_desc: "Información específica para la aplicación móvil MusicStream.",
         sitemap_xml_title: "Sitemap XML",
-        sitemap_xml_desc: "Mapa técnico del sitio dedicado a los motores de recherche (SEO)."
+        sitemap_xml_desc: "Mapa técnico del sitio dedicado a los motores de recherche (SEO).",
+        share_opening: "Abriendo canción...",
+        share_redirect: "Si no tienes la App instalada, serás redirigido a la Play Store."
     },
     de: {
         dev_profile: "Entwicklerprofil",
@@ -933,7 +941,9 @@ const translations = {
         sitemap_policy_app_title: "App-Datenschutzrichtlinie",
         sitemap_policy_app_desc: "Spezifische Informationen für die mobile MusicStream-Anwendung.",
         sitemap_xml_title: "XML-Sitemap",
-        sitemap_xml_desc: "Technische Sitemap der Website für Suchmaschinen (SEO)."
+        sitemap_xml_desc: "Technische Sitemap der Website für Suchmaschinen (SEO).",
+        share_opening: "Song wird geöffnet...",
+        share_redirect: "Wenn Sie die App nicht installiert haben, werden Sie zum Play Store weitergeleitet."
     },
 };
 
