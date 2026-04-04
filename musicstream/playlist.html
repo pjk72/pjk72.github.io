@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,15 +19,62 @@
             text-align: center;
             -webkit-font-smoothing: antialiased;
         }
-        .loading { font-size: 14px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; opacity: 0.8; }
-        .action-box { padding: 20px; animation: fadeIn 0.5s ease; }
-        a { color: #818cf8; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 1px solid rgba(129, 140, 248, 0.3); border-radius: 8px; display: inline-block; margin-top: 10px; transition: all 0.2s; }
-        a:hover { background: rgba(129, 140, 248, 0.1); border-color: #818cf8; }
-        .btn-playstore { background: #10b981; color: white; border: none; margin-top: 20px; }
-        .btn-playstore:hover { background: #059669; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .loading {
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        .action-box {
+            padding: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        a {
+            color: #818cf8;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border: 1px solid rgba(129, 140, 248, 0.3);
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            background: rgba(129, 140, 248, 0.1);
+            border-color: #818cf8;
+        }
+
+        .btn-playstore {
+            background: #10b981;
+            color: white;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .btn-playstore:hover {
+            background: #059669;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
+
 <body>
     <div id="content" class="loading">Inizializzazione reindirizzamento...</div>
 
@@ -48,7 +96,7 @@
 
         if (token) {
             const deepLink = `musicstream://playlist?token=${token}`;
-            
+
             // 1. Tenta immediato reindirizzamento app
             window.location.href = deepLink;
 
@@ -64,7 +112,7 @@
                         <a href="${playStoreUrl}" class="btn-playstore">SCARICA DA PLAY STORE</a>
                     </div>
                 `;
-                
+
                 // Opzionale: Reindirizzamento automatico a Play Store dopo ulteriori 3 secondi (se l'utente non fa nulla)
                 // Usato spesso per "Underground" redirectors, ma a volte fastidioso. 
                 // Lo attiviamo come puro redirect se sono passati 5 secondi totali.
@@ -80,4 +128,5 @@
         }
     </script>
 </body>
+
 </html>
