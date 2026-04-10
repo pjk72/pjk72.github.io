@@ -10,6 +10,10 @@ const translations = {
         feat_2: "📻 Radio online",
         feat_3: "🔥 Playlist aggiornate",
         feat_4: "📱 Design moderno",
+        feat_5: "🚗 Supporto Android Auto",
+        feat_6: "🎨 Temi e Sfondi personalizzati",
+        feat_7: "📲 Condivisione via QR Code",
+        feat_8: "📥 Download brani per ascolto offline",
         fav_title: "⭐ I Tuoi Preferiti",
         fav_songs: "🎵 Brani Singoli Salvati",
         fav_albums: "💿 Album e Collezioni",
@@ -33,6 +37,15 @@ const translations = {
         cookie_accept: "Accetta tutti",
         loading_bio: "Caricamento biografia...",
         go_back: "⬅ Torna indietro",
+        events_title: "🌍 Eventi & Concerti Globali",
+        events_subtitle: "Scopri i grandi festival e i tour mondiali più attesi del momento.",
+        events_search_placeholder: "🔍 Cerca eventi, città o festival...",
+        view_tickets: "Vedi Biglietti",
+        date_from: "DAL",
+        date_to: "AL",
+        group_by: "Raggruppa per:",
+        group_date: "Data",
+        group_country: "Paese",
         // Policy translations
         policy_title: "Privacy Policy & Cookie Policy",
         policy_date: "<strong>Ultimo aggiornamento:</strong> Marzo 2026",
@@ -208,6 +221,10 @@ const translations = {
         feat_2: "📻 Online radio",
         feat_3: "🔥 Updated playlists",
         feat_4: "📱 Modern design",
+        feat_5: "🚗 Android Auto Support",
+        feat_6: "🎨 Custom Themes & Backgrounds",
+        feat_7: "📲 QR Code Sharing",
+        feat_8: "📥 Offline Song Download",
         fav_title: "⭐ Your Favorites",
         fav_songs: "🎵 Saved Single Tracks",
         fav_albums: "💿 Albums and Collections",
@@ -231,6 +248,15 @@ const translations = {
         cookie_accept: "Accept all",
         loading_bio: "Loading biography...",
         go_back: "⬅ Go back",
+        events_title: "🌍 Global Events & Concerts",
+        events_subtitle: "Discover the most anticipated major festivals and world tours right now.",
+        events_search_placeholder: "🔍 Search events, cities, or festivals...",
+        view_tickets: "View Tickets",
+        date_from: "FROM",
+        date_to: "TO",
+        group_by: "Group by:",
+        group_date: "Date",
+        group_country: "Country",
         // Policy translations
         policy_title: "Privacy Policy & Cookie Policy",
         policy_date: "<strong>Last updated:</strong> March 2026",
@@ -406,6 +432,10 @@ const translations = {
         feat_2: "📻 Radio en ligne",
         feat_3: "🔥 Playlists à jour",
         feat_4: "📱 Design moderne",
+        feat_5: "🚗 Support Android Auto",
+        feat_6: "🎨 Thèmes et arrière-plans personnalisés",
+        feat_7: "📲 Partage par QR Code",
+        feat_8: "📥 Téléchargement hors ligne",
         fav_title: "⭐ Vos favoris",
         fav_songs: "🎵 Chansons uniques enregistrées",
         fav_albums: "💿 Albums et collections",
@@ -429,6 +459,15 @@ const translations = {
         cookie_accept: "Tout accepter",
         loading_bio: "Chargement de la biographie...",
         go_back: "⬅ Retour",
+        events_title: "🌍 Événements & Concerts Mondiaux",
+        events_subtitle: "Découvrez les festivals majeurs et les tournées mondiales les plus attendus du moment.",
+        events_search_placeholder: "🔍 Rechercher des événements, des villes ou des festivals...",
+        view_tickets: "Voir les billets",
+        date_from: "DU",
+        date_to: "AU",
+        group_by: "Grouper par:",
+        group_date: "Date",
+        group_country: "Pays",
         // Policy translations
         policy_title: "Politique de confidentialité & Politique relative aux cookies",
         policy_date: "<strong>Dernière mise à jour:</strong> Mars 2026",
@@ -604,6 +643,10 @@ const translations = {
         feat_2: "📻 Radio en línea",
         feat_3: "🔥 Listas actualizadas",
         feat_4: "📱 Diseño moderno",
+        feat_5: "🚗 Compatible con Android Auto",
+        feat_6: "🎨 Temas y fondos personalizados",
+        feat_7: "📲 Compartir vía QR Code",
+        feat_8: "📥 Descarga de canciones offline",
         fav_title: "⭐ Tus Favoritos",
         fav_songs: "🎵 Canciones únicas guardadas",
         fav_albums: "💿 Álbumes y colecciones",
@@ -627,6 +670,15 @@ const translations = {
         cookie_accept: "Aceptar todo",
         loading_bio: "Cargando biografía...",
         go_back: "⬅ Volver",
+        events_title: "🌍 Eventos y Conciertos Globales",
+        events_subtitle: "Descubre los grandes festivales y giras mundiales más esperados del momento.",
+        events_search_placeholder: "🔍 Buscar eventos, ciudades o festivales...",
+        view_tickets: "Ver Entradas",
+        date_from: "DEL",
+        date_to: "AL",
+        group_by: "Agrupar por:",
+        group_date: "Fecha",
+        group_country: "País",
         // Policy translations
         policy_title: "Política de Privacidad y Política de Cookies",
         policy_date: "<strong>Última actualización:</strong> Marzo 2026",
@@ -802,6 +854,10 @@ const translations = {
         feat_2: "📻 Online-Radio",
         feat_3: "🔥 Aktualisierte Playlists",
         feat_4: "📱 Modernes Design",
+        feat_5: "🚗 Android Auto Unterstützung",
+        feat_6: "🎨 Benutzerdefinierte Themen & Hintergründe",
+        feat_7: "📲 QR-Code-Sharing",
+        feat_8: "📥 Offline-Song-Download",
         fav_title: "⭐ Deine Favoriten",
         fav_songs: "🎵 Gespeicherte Einzelsongs",
         fav_albums: "💿 Alben und Sammlungen",
@@ -825,6 +881,15 @@ const translations = {
         cookie_accept: "Alles akzeptieren",
         loading_bio: "Biografie laden...",
         go_back: "⬅ Zurück",
+        events_title: "🌍 Globale Events & Konzerte",
+        events_subtitle: "Entdecken Sie die am meisten erwarteten großen Festivals und Welttourneen.",
+        events_search_placeholder: "🔍 Suche nach Events, Städten oder Festivals...",
+        view_tickets: "Tickets ansehen",
+        date_from: "VOM",
+        date_to: "BIS",
+        group_by: "Gruppieren nach:",
+        group_date: "Datum",
+        group_country: "Land",
         // Policy translations
         policy_title: "Datenschutzrichtlinie & Cookie-Richtlinie",
         policy_date: "<strong>Zuletzt aktualisiert:</strong> März 2026",
@@ -1013,6 +1078,22 @@ function applyTranslations(lang) {
     const searchInput = document.getElementById('music-search-input');
     if (searchInput) {
         searchInput.placeholder = translations[lang].search_placeholder;
+    }
+
+    // Update event search placeholder
+    const eventSearchInput = document.getElementById('event-search-input');
+    if (eventSearchInput && translations[lang].events_search_placeholder) {
+        eventSearchInput.placeholder = translations[lang].events_search_placeholder;
+    }
+
+    // Re-render events to update button texts
+    if (typeof renderEvents === 'function') {
+        renderEvents(eventSearchInput ? eventSearchInput.value : '');
+    }
+
+    // Re-fetch events from API with the new locale
+    if (typeof fetchLiveEvents === 'function') {
+        fetchLiveEvents();
     }
 
     // Aggiorna l'UI del dropdown
