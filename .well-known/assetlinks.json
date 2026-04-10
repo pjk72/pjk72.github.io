@@ -1,0 +1,15 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls",
+            "delegate_permission/common.get_login_creds"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.fazio.musicstream",
+            "sha256_cert_fingerprints": [
+                "C5:21:41:49:B5:38:6C:E5:EC:F1:89:69:CB:20:A4:05:0D:6F:69:63:3F:3D:07:BF:77:CE:75:38:FB:A1:E2:0B"
+            ]
+        }
+    }
+]
