@@ -46,6 +46,8 @@ const translations = {
         group_by: "Raggruppa per:",
         group_date: "Data",
         group_country: "Paese",
+        expand_all: "Espandi Tutto",
+        collapse_all: "Riduci Tutto",
         // Policy translations
         policy_title: "Privacy Policy & Cookie Policy",
         policy_date: "<strong>Ultimo aggiornamento:</strong> Marzo 2026",
@@ -257,6 +259,8 @@ const translations = {
         group_by: "Group by:",
         group_date: "Date",
         group_country: "Country",
+        expand_all: "Expand All",
+        collapse_all: "Collapse All",
         // Policy translations
         policy_title: "Privacy Policy & Cookie Policy",
         policy_date: "<strong>Last updated:</strong> March 2026",
@@ -468,6 +472,8 @@ const translations = {
         group_by: "Grouper par:",
         group_date: "Date",
         group_country: "Pays",
+        expand_all: "Tout développer",
+        collapse_all: "Tout réduire",
         // Policy translations
         policy_title: "Politique de confidentialité & Politique relative aux cookies",
         policy_date: "<strong>Dernière mise à jour:</strong> Mars 2026",
@@ -679,6 +685,8 @@ const translations = {
         group_by: "Agrupar por:",
         group_date: "Fecha",
         group_country: "País",
+        expand_all: "Expandir Todo",
+        collapse_all: "Contraer Todo",
         // Policy translations
         policy_title: "Política de Privacidad y Política de Cookies",
         policy_date: "<strong>Última actualización:</strong> Marzo 2026",
@@ -890,6 +898,8 @@ const translations = {
         group_by: "Gruppieren nach:",
         group_date: "Datum",
         group_country: "Land",
+        expand_all: "Alle ausklappen",
+        collapse_all: "Alle einklappen",
         // Policy translations
         policy_title: "Datenschutzrichtlinie & Cookie-Richtlinie",
         policy_date: "<strong>Zuletzt aktualisiert:</strong> März 2026",
@@ -1112,6 +1122,11 @@ function applyTranslations(lang) {
         }
         langFlag.src = flagUrl;
         langText.textContent = langName;
+    }
+
+    // Aggiorna il pulsante espansione se esiste
+    if (typeof window.refreshExpandBtn === 'function') {
+        window.refreshExpandBtn();
     }
 }
 
