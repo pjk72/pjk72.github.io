@@ -9,8 +9,19 @@ from datetime import datetime
 try:
     from deep_translator import GoogleTranslator
     HAS_TRANSLATOR = True
-except ImportError:
+except Exception:
+    # Provide a lightweight fallback so linters/IDEs don't flag the import as unresolved
+    # and so the rest of the code can reference GoogleTranslator safely.
     HAS_TRANSLATOR = False
+
+    class GoogleTranslator:
+        def __init__(self, source: str = 'auto', target: str = 'en'):
+            self.source = source
+            self.target = target
+
+        def translate(self, text: str) -> str:
+            # Fallback: return the original text (actual translation not available)
+            return text
 
 # L10N_DIR = os.path.dirname(os.path.abspath(__file__))
 # REPORT_FILE = os.path.join(L10N_DIR, "report_changes.txt")
@@ -162,8 +173,9 @@ def main():
     print("--- Localization Synchronizer (Python) ---")
     
     if not HAS_TRANSLATOR:
-        print("\n[WARNING] deep-translator not installed. Missing entries will be placeholders.")
-        print("To enable auto-translation, run: pip install deep-translator\n")
+        print("\n[ERROR] deep-translator non è installato. La traduzione automatica non è disponibile.")
+        print("Installa il pacchetto eseguendo: pip install deep-translator\n")
+        return
 
     files = [f.replace(".dart", "") for f in os.listdir(L10N_DIR) if f.endswith(".dart") and f != "app_translations.dart"]
     

@@ -5,7 +5,7 @@ window.currentPlayBtn = null;
 let currentCountry = 'it'; // Definita globalmente per essere accessibile da tutti i moduli
 let musicEvents = []; 
 let currentGrouping = 'date'; // 'date' o 'country'
-let eventsGlobalExpanded = true; // null = default, true = expand all, false = collapse all
+let eventsGlobalExpanded = false; // null = default, true = expand all, false = collapse all
 window.currentGrouping = currentGrouping;
 window.eventsGlobalExpanded = eventsGlobalExpanded;
 const TICKETMASTER_API_KEY = 'xWR4t9BUYk3VhI546JOxNDIrpf13sPzA'; 
