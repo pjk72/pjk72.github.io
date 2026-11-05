@@ -407,6 +407,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // Forza sincronizzazione iniziale testi pulsanti
     if (typeof window.refreshExpandBtn === 'function') window.refreshExpandBtn();
 
+    // 4b. Capabilities Accordion
+    const capItems = document.querySelectorAll('.cap-item');
+    const capToggleAll = document.getElementById('cap-toggle-all');
+
+    function capSetOpen(item, open) {
+        const header = item.querySelector('.cap-header');
+        item.classList.toggle('open', open);
+        if (header) header.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    window.refreshCapToggle = function () {
+        if (!capToggleAll || capItems.length === 0) return;
+        const allOpen = Array.from(capItems).every(i => i.classList.contains('open'));
+        const key = allOpen ? 'cap_collapse_all' : 'cap_expand_all';
+        const lang = (typeof currentLang !== 'undefined') ? currentLang : 'it';
+        capToggleAll.textContent = (typeof translations !== 'undefined' && translations[lang] && translations[lang][key])
+            ? translations[lang][key]
+            : (allOpen ? 'Riduci tutto' : 'Espandi tutto');
+        capToggleAll.setAttribute('aria-label', capToggleAll.textContent);
+    };
+
+    capItems.forEach(item => {
+        const header = item.querySelector('.cap-header');
+        if (!header) return;
+        header.addEventListener('click', () => {
+            capSetOpen(item, !item.classList.contains('open'));
+            window.refreshCapToggle();
+        });
+    });
+
+    if (capToggleAll) {
+        capToggleAll.addEventListener('click', () => {
+            const allOpen = Array.from(capItems).every(i => i.classList.contains('open'));
+            capItems.forEach(i => capSetOpen(i, !allOpen));
+            window.refreshCapToggle();
+        });
+    }
+
+    if (typeof window.refreshCapToggle === 'function') window.refreshCapToggle();
+
     // 5. Dark Mode & Themes
     const darkModeBtn = document.getElementById('dark-mode-toggle');
     if (darkModeBtn) {
